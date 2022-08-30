@@ -1,0 +1,29 @@
+{
+  "name": "learning-electronjs",
+  "version": "1.0.0-alpha1",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2kCarlos/learning-electronjs.git"
+  },
+  "keywords": [
+    "electron",
+    "typescript",
+    "javascript",
+    "ui",
+    "desktop"
+  ],
+  "author": "Carlos DaLomab",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/2kCarlos/learning-electronjs/issues"
+  },
+  "homepage": "https://github.com/2kCarlos/learning-electronjs#readme",
+  "devDependencies": {
+    "electron": "^20.1.0"
+  }
+}
