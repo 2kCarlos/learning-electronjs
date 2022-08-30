@@ -8,10 +8,12 @@ import { app, BrowserWindow } from "electron";
 function createWindow() : BrowserWindow {
     const window : BrowserWindow = new BrowserWindow({
         width: 800,
-        height: 600
+        height: 600,
+        show: false
     });
-
+    
     window.loadFile("src/index.html");
+    window.once("ready-to-show", window.show);
     return window;
 };
 
