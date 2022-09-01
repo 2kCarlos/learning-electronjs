@@ -13,7 +13,15 @@
             "args": [
                 "."
             ],
-            "outputCapture": "std"
+            "outputCapture": "std",
+            "outFiles": [
+                "${workspaceFolder}/public/**/*.js",
+                "!**/node_modules/**"
+            ],
+            "resolveSourceMapLocations": [
+                "${workspaceFolder}/public/**/*.js.map",
+                "!**/node_modules/**"
+            ]
         }
     ]
 }
