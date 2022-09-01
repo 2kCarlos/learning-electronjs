@@ -1,0 +1,19 @@
+{
+    "version": "1.0.0",
+    "configurations": [
+        {
+            "name": "Custom Debug",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron",
+            "windows": {
+                "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/electron.cmd"
+            },
+            "args": [
+                "."
+            ],
+            "outputCapture": "std"
+        }
+    ]
+}
