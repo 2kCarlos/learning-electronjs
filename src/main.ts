@@ -2,17 +2,22 @@
 // import Electron from "electron";
 
 //NOTE: Use this if you want to use the shorthand names without needing to write
-//Electron.BrowserWindow and Electron.app for Browserwindow and app, rsepectively:
+//Electron.BrowserWindow and Electron.app for Browserwindow and app, respectively:
 import { app, BrowserWindow } from "electron";
+import path from "path";
 
 function createWindow() : BrowserWindow {
+    console.log("!?!");
     const window : BrowserWindow = new BrowserWindow({
         width: 800,
         height: 600,
+        webPreferences: {
+            preload: path.join(__dirname, "preload.js")
+        },
         show: false
     });
     
-    window.loadFile("src/index.html");
+    window.loadFile("public/index.html");
     window.once("ready-to-show", window.show);
     return window;
 };
