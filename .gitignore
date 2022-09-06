@@ -131,4 +131,4 @@ dist
 
 # --- --- ---
 # Auto-generated JS files (from TS)
-/public
+/public/**/*.js
