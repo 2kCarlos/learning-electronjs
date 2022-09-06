@@ -6,10 +6,6 @@
   "scripts": {
     "start": "sh \"./scripts/npm start.sh\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/2kCarlos/learning-electronjs.git"
-  },
   "keywords": [
     "electron",
     "typescript",
@@ -17,8 +13,12 @@
     "ui",
     "desktop"
   ],
-  "author": "Carlos DaLomab",
+  "author": "Carlos DaLomba",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/2kCarlos/learning-electronjs"
+  },
   "bugs": {
     "url": "https://github.com/2kCarlos/learning-electronjs/issues"
   },
