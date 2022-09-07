@@ -7,8 +7,7 @@ This repo contains sample ElectronJS project(s) written in TypeScript to help me
 
 ### 2. Run `npm install electron concurrently wait-on cross-env`
 ### 3. Edit your `package.json` with the following:
-#### 3.1. Set your "main" field to `"public/main.js"`
-#### 3.2. Set your "homepage" field to `"./"`
+#### 3.1. Set your "main" field to `"src/main.js"`
 #### 3.3. Set your "scripts" field to the following:
 ```json
 "scripts": {
@@ -37,11 +36,11 @@ This repo contains sample ElectronJS project(s) written in TypeScript to help me
   
       /* Modules */
       "module": "commonjs",                                /* Specify what module code is generated. */
-      "rootDir": "./src",                                  /* Specify the root folder within your source files. */
+      "rootDir": "ts",                                     /* Specify the root folder within your source files. */
   
       /* Emit */
       "sourceMap": true,                                   /* Create source map files for emitted JavaScript files. */
-      "outDir": "./public",                                /* Specify an output folder for all emitted files. */
+      "outDir": "src",                                     /* Specify an output folder for all emitted files. */
       "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
   
       /* Type Checking */

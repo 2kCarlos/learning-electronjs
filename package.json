@@ -16,12 +16,15 @@
     "web-vitals": "^2.1.4"
   },
   "main": "public/main.js",
-  "homepage": "public/",
+  "homepage": "src/",
   "scripts": {
+    "tsc-all": "tsc --project ts-electron && tsc --project ts-react",
+    
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    
     "electron-serve": "concurrently -k \"cross-env BROWSER=none npm start\" \" npm run electron-start\"",
     "eletron-build": "",
     "electron-start": "wait-on tcp:3000 && electron ."
