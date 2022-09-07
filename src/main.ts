@@ -1,7 +1,4 @@
-//TODO: We can use this import syntax after updating to TypeScript:
-// import { app, BrowserWindow } from "electron";
-
-const { app, BrowserWindow } = require("electron");
+import { app, BrowserWindow } from "electron";
 
 function createWindow() {
     const window = new BrowserWindow({
