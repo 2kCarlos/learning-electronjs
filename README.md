@@ -1,6 +1,9 @@
 # Learning ElectronJS (and ReactJS, with TypeScript)
 This repo contains sample ElectronJS project(s) written in TypeScript to help me get up-to-speed with creating desktop applications in a web dev environment, rather than what I'm used to in Unity/C# programming!
 
+## Creating a New ReactJS + ElectronJS + TypeScript Projet
+1. Run `npx create-react-app .`
+
 ## References
 - [(Getting Started with) React with TypeScript](https://www.electronforge.io/guides/framework-integration/react-with-typescript)
 - [`package.json` documentation](https://docs.npmjs.com/cli/v8/configuring-npm/package-json)
