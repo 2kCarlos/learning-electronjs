@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "module": "CommonJS",
+        "strict": true,
+        "experimentalDecorators": true,
+        "sourceMap": true,
+        "outDir": "./dist",
+        "baseUrl": ".",
+        "target": "ES2020",
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext"
+        ],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        
+        //WARNING: This was giving errors in electron.ts on the first lines (import statements), so I commented this out
+        // "isolatedModules": true,
+
+        // "noEmit": true,
+        "jsx": "react-jsx"
+    },
+    "include": [
+        "src/**/*"
+    ]
+}

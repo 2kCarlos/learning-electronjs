@@ -131,5 +131,5 @@ dist
 
 # --- --- ---
 # Auto-generated JS files (from TS)
-/public/**/*.js
-/public/**/*.js.map
+/dist/**/*.js
+/dist/**/*.js.map
