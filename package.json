@@ -1,0 +1,48 @@
+{
+  "name": "learning-electronjs",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/electron.js",
+  "homepage": "./",
+  "scripts": {
+    "start": "npm run start-all",
+    "start-all": "npm run transpile-and-copy && concurrently -k \"cross-env BROWSER=none npm run start-react-without-tsc\" \"npm run start-electron-without-tsc\"",
+
+    "start-react": "npm run transpile-and-copy && npm run start-react-without-tsc",
+    "start-electron": "npm run transpile-and-copy && npm run start-electron-without-tsc",
+    
+    "build-react": "npm run transpile-and-copy && react-scripts build",
+    
+    "start-react-without-tsc": "react-scripts start",
+    "start-electron-without-tsc": "wait-on tcp:3000 && electron ./dist/electron.js",
+
+    "transpile-and-copy": "tsc && cp -r public/* dist",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.18",
+    "@types/react-dom": "^18.0.6",
+    "electron": "^20.1.2",
+    "typescript": "^4.8.2"
+  },
+  "dependencies": {
+    "concurrently": "^7.4.0",
+    "cross-env": "^7.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1",
+    "wait-on": "^6.0.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
