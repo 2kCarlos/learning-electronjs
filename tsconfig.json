@@ -21,10 +21,16 @@
         "moduleResolution": "node",
         "resolveJsonModule": true,
         "isolatedModules": true,
-        // "noEmit": true,
+        "noEmit": true,
         "jsx": "react-jsx"
     },
     "include": [
+        "electron/**/*",
         "src/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "build",
+        "dist"
     ]
 }
