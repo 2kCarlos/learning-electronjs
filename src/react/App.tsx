@@ -3,7 +3,7 @@ import React from 'react';
 const App = (): JSX.Element => (
   <div>
     <p>😶‍🌫️ Hello there</p>
-    <p>🤖 General Kenobi !</p>
+    <p>This is from App.tsx!</p>
   </div>
 );
 

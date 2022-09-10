@@ -1,33 +1,50 @@
 {
   "name": "learning-electronjs",
-  "version": "0.1.0",
+  "displayName": "Learning ElectronJS",
+  "version": "1.0.0",
+  "description": "This is a sample project with ALL of the following: ElectronJS, ReactJS, and TypeScript.",
+  "author": "Carlos DaLomba",
   "private": true,
-  "main": "dist/electron.js",
+  "main": "build/electron/main.js",
   "homepage": "./",
   "scripts": {
-    "start": "npm run start-all",
-    "start-all": "npm run transpile-and-copy && concurrently -k \"cross-env BROWSER=none npm run start-react-without-tsc\" \"npm run start-electron-without-tsc\"",
-
-    "start-react": "npm run transpile-and-copy && npm run start-react-without-tsc",
-    "start-electron": "npm run transpile-and-copy && npm run start-electron-without-tsc",
-    
-    "build-react": "npm run transpile-and-copy && react-scripts build",
-    
-    "start-react-without-tsc": "react-scripts start",
-    "start-electron-without-tsc": "wait-on tcp:3000 && electron ./dist/electron.js",
-
-    "transpile-and-copy": "tsc && cp -r public/* dist",
-    "clean": "rm -rf dist"
+    "start": "concurrently -k \"cross-env BROWSER=none npm run start-react\" \"npm run transpile && wait-on tcp:3000 && npm run start-electron-without-tsc\"",
+    "build-windows": "npm run build-react && npm run build-electron-windows",
+    "build-mac": "npm run build-react && npm run build-electron-mac",
+    "build-linux": "npm run build-react && npm run build-electron-linux",
+    "start-react": "react-scripts start",
+    "build-react": "react-scripts build",
+    "start-electron": "npm run transpile && npm run start-electron-without-tsc",
+    "start-electron-without-tsc": "electron .",
+    "transpile": "tsc --project ./electron",
+    "clean": "rm -rf dist build",
+    "build-electron-windows": "npm run transpile && electron-builder build --win -c.extraMetadata.main=build/electron/main.js --publish never",
+    "build-electron-mac": "npm run transpile && electron-builder build --mac -c.extraMetadata.main=build/electron/main.js --publish never",
+    "build-electron-linux": "npm run transpile && electron-builder build --linux -c.extraMetadata.main=build/electron/main.js --publish never"
+  },
+  "build": {
+    "extends": null,
+    "files": [
+      "**/*",
+      "build"
+    ],
+    "publish": {
+      "provider": "github",
+      "repo": "learning-electronjs",
+      "owner": "2kCarlos"
+    }
   },
   "devDependencies": {
     "@types/react": "^18.0.18",
     "@types/react-dom": "^18.0.6",
     "electron": "^20.1.2",
+    "electron-builder": "^23.3.3",
     "typescript": "^4.8.2"
   },
   "dependencies": {
     "concurrently": "^7.4.0",
     "cross-env": "^7.0.3",
+    "electron-is-dev": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
