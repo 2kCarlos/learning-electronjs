@@ -1,5 +1,7 @@
 import { app, BrowserWindow } from "electron";
 import path from "path";
+import isDev from "electron-is-dev";
+const isMacOS = process.platform === 'darwin';
 
 function createWindow() : BrowserWindow {
     const mainWindow = new BrowserWindow({
@@ -7,10 +9,12 @@ function createWindow() : BrowserWindow {
         height: 600,
     });
 
-    console.log(process.env.NODE_ENV);
+    console.log("isDev = " + isDev);
     
-    // mainWindow.loadFile(path.join(__dirname, "index.html"));
-    mainWindow.loadURL("http://localhost:3000");
+    if (isDev)
+        mainWindow.loadURL("http://localhost:3000");
+    else
+        mainWindow.loadFile(path.join(__dirname, "../index.html"));
 
     // Open the DevTools
     mainWindow.webContents.openDevTools();
